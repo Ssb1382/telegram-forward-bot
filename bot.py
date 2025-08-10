@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-BOT_TOKEN = "8379742321:AAEef6P1oYZr0r-Ud8Yt1DaUBCo_7U7HhQI"  # Bot token
+# ========== تنظیمات ==========
+BOT_TOKEN = "8379742321:AAEef6P1oYZr0r-Ud8Yt1DaUBCo_7U7HhQI"  # اینجا توکن ربات که از BotFather گرفتی رو بگذار
 MY_ID = 1905094596
 
 async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -22,5 +24,5 @@ async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(MessageHandler(filters.ALL, forward_message))
 
-print("ربات در حال اجراست...")
+print("Bot is running...")
 app.run_polling()
